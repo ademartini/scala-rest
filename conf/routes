@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+POST	/analysis					controllers.Analysis.post(ignoreFilter: Option[String])
+POST	/analysis/					controllers.Analysis.post(ignoreFilter: Option[String])
+GET		/analysis/:id				controllers.Analysis.get(id: Long)
+GET		/analysis/:id/				controllers.Analysis.get(id: Long)
+GET		/analysis/					controllers.Analysis.getList
+GET		/analysis					controllers.Analysis.getList
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
